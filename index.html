@@ -194,7 +194,7 @@
               </div>
               <div class="row mt-4 pt-2">
                 <div class="col">
-                  <form>
+                  <form action="index-envia.php" method="POST">
                     <div class="form-group mb-2">
                       <div class="input-group border-0">
                         <div class="input-group-prepend">
@@ -202,7 +202,7 @@
                             <i class="now-ui-icons users_circle-08 lg"></i>
                           </span>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nome" required="required"> </div>
+                        <input type="text" name="nome" class="form-control" id="inlineFormInputGroup" placeholder="Nome" required="required"> </div>
                     </div>
                     <div class="form-group mb-2">
                       <div class="input-group border-0">
@@ -211,10 +211,10 @@
                             <i class="now-ui-icons ui-1_email-85 lg"></i>
                           </span>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="E-mail" required="required"> </div>
+                        <input type="text" name="email" class="form-control" id="inlineFormInputGroup" placeholder="E-mail" required="required"> </div>
                     </div>
                     <div class="form-group">
-                      <textarea class="form-control form-control-lg" id="exampleTextarea" rows="3" placeholder="Mensagem..."></textarea>
+                      <textarea class="form-control form-control-lg" name="mensagem" id="exampleTextarea" rows="3" placeholder="Mensagem..."></textarea>
                     </div>
                     <button type="submit" class="btn mt-4 mb-3 btn-light rounded btn-lg text-primary">ENVIAR</button>
                   </form>

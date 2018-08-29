@@ -194,29 +194,36 @@
               </div>
               <div class="row mt-4 pt-2">
                 <div class="col">
-                  <form action="index-envia.php#fale-conosco" method="POST">
-                    <div class="form-group mb-2">
-                      <div class="input-group border-0">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1">
-                            <i class="now-ui-icons users_circle-08 lg"></i>
-                          </span>
-                        </div>
-                        <input type="text" name="nome" class="form-control" id="inlineFormInputGroup" placeholder="Nome" required="required"> </div>
-                    </div>
-                    <div class="form-group mb-2">
-                      <div class="input-group border-0">
-                        <div class="input-group-prepend ">
-                          <span class="input-group-text" id="basic-addon1">
-                            <i class="now-ui-icons ui-1_email-85 lg"></i>
-                          </span>
-                        </div>
-                        <input type="text" name="email" class="form-control" id="inlineFormInputGroup" placeholder="E-mail" required="required"> </div>
-                    </div>
-                    <div class="form-group">
-                      <textarea class="form-control form-control-lg" name="mensagem" id="exampleTextarea" rows="3" placeholder="Mensagem..."></textarea>
-                    </div>
-                    <button type="submit" class="btn mt-4 mb-3 btn-light rounded btn-lg text-primary">ENVIAR</button>
+                  <form action="index-envia.php" method="POST">
+                    <p>Mensagem enviada com sucesso. Obrigado.</p>
+
+                    <?php
+                        $nome = $_POST['nome'];
+                        $email = $_POST['email'];
+                        $mensagem = $_POST['mensagem'];
+
+                        $email_remetente = "bytecore@gmail.com";
+                        $email_reply = "marcos@mojumob.com.br";
+                        $email_destinatario = "coffenet.web@gmail.com";
+                        $email_assunto = "Contato do site";
+
+                        $email_conteudo = "Nome = $nome \n"; 
+                        $email_conteudo .= "Email = $email \n";
+                        $email_conteudo .= "Mensagem = $mensagem \n";
+
+                        $email_headers = implode ( "\n",array ( "From: $email_remetente", "Reply-To: $email_reply", 
+                        "Return-Path: $email_remetente","MIME-Version: 1.0","X-Priority: 3","Content-Type: text/html; 
+                        charset=UTF-8" ) );
+
+                        if (mail ($email_destinatario, $email_assunto, nl2br($email_conteudo), $email_headers)){ 
+                            echo "</b>E-Mail enviado com sucesso!</b>"; 
+                            } 
+                    else{ 
+                            echo "</b>Falha no envio do E-Mail!</b>"; } 
+
+
+                    ?>
+
                   </form>
                 </div>
               </div>

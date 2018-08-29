@@ -202,7 +202,7 @@
                         $email = $_POST['email'];
                         $mensagem = $_POST['mensagem'];
 
-                        $email_remetente = "bytecore@gmail.com";
+                        $email_remetente = "$email";
                         $email_reply = "$email";
                         $email_destinatario = "atendimento@mojumob.com.br";
                         $email_assunto = "Contato do site";

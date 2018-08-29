@@ -203,8 +203,8 @@
                         $mensagem = $_POST['mensagem'];
 
                         $email_remetente = "bytecore@gmail.com";
-                        $email_reply = "marcos@mojumob.com.br";
-                        $email_destinatario = "coffenet.web@gmail.com";
+                        $email_reply = "$email";
+                        $email_destinatario = "atendimento@mojumob.com.br";
                         $email_assunto = "Contato do site";
 
                         $email_conteudo = "Nome = $nome \n"; 
